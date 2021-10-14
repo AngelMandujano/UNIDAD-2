@@ -1,0 +1,47 @@
+<script>
+var nombres = ["Diego","Carlo","Pedro","Juan","Gael"];
+var apellidoPaterno =["Lopez","Mandujano","Espinoza","Barrera","Alarcon"];
+var apellidoMaterno = ["Hernandez","Trujillo","Peñanieto","Gonzales","Diaz"];
+var edad = ["1","21"];
+var sexo =["Masculino","Femenino",];
+var codigo =["1","2","A","3","G"];
+
+for (var i = 0; i < 1000; i++) {
+let humano = persona();
+console.log(humano);
+}
+function persona (){
+    let nombre = nombres[numeroAleatorio(0,nombres.length-1)];
+    let apellido = apellidoPaterno [numeroAleatorio(0,apellidoPaterno.length-1)];
+    let apellidoM = apellidoMaterno [numeroAleatorio(0,apellidoMaterno.length-1)];
+    let eda = numeroAleatorio(1,21);
+    if(numeroAleatorio(0,1)==0){
+        var sexoo = "Masculino"
+    }
+    else{
+        var sexo =  "Femenino";
+}
+let codigo = generarCodigo(6);
+let persona={
+    nombres: nombres,
+    apellidoPaterno: apellidoPaterno,
+    apellidoMaterno: apellidoMaterno,
+    edad: edad,
+    sexo: sexo,
+    codigo: codigo
+
+}
+return persona;
+}
+function numeroAleatorio(min,max){
+    return Math.floor(Math.random()*(max - min + 1 )) + min;
+}
+function generarCodigo(n){
+    let cadena = "";
+    for (var i = 0; i < n; i++) {
+        cadena+= codigo[numeroAleatorio(0,codigo.length-1)];
+}
+return cadena;
+}
+
+</script>
